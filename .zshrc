@@ -8,6 +8,13 @@ export PATH="$PIP_BIN:$EXIFTOOL:$GOPATH/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export PYTHONPATH="$HOME/Documentos/devs/python/pyloteria/pyloteria"
 
+# HISTORY 
+export HISTORY_IGNORE="(ls|exit|clear|cd|cd ..|cd..)"
+export HISTSIZE=25000
+export HISTFILE=~/.zsh_history
+export SAVEHIST=100000
+setopt HIST_IGNORE_ALL_DUPS
+
 ### ANTIGEN ###
 source ~/.antigen/antigen.zsh
 
