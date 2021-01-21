@@ -49,6 +49,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'junegunn/seoul256.vim'
 
 call plug#end()
 
@@ -67,8 +68,8 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:dracula_colorterm = 0
-colorscheme dracula 
+let g:seoul256_background = 233
+colorscheme seoul256 
 
 " => LEADER KEY
 let mapleader = " "

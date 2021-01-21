@@ -38,6 +38,9 @@ antigen theme denysdovhan/spaceship-prompt
 # Tell Antigen that you're done.
 antigen apply
 
+### SPACESHIP PROMPT ###
+SPACESHIP_GCLOUD_SHOW=false
+
 ### ALIAS ###
 alias cfg-zsh="nvim ~/.zshrc"
 alias feh="feh -.Z -g 1024x768+478+156"
