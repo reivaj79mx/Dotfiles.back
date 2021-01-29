@@ -9,6 +9,9 @@ set splitbelow
 set splitright
 set noswapfile
 set noshowmode
+set nohlsearch
+set incsearch
+set tags^=.git/tags;~
 
 " => CURSOR
 set cursorcolumn
@@ -41,8 +44,8 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'vimlab/split-term.vim'
 Plug 'preservim/nerdtree'
 Plug 'bagrat/vim-buffet'
-Plug 'vim-python/python-syntax'
 Plug 'airblade/vim-rooter'
+Plug 'sheerun/vim-polyglot'
 
 " => THEMES
 Plug 'arcticicestudio/nord-vim'
@@ -109,3 +112,7 @@ let g:startify_bookmarks = [
     \ { 'a': '~/Documentos/devs/python/pyloteria' }
     \ ]
 nmap <leader>s :Startify<CR>
+
+nnoremap <F12> <C-]>
+
+nnoremap <leader>oi :CocCommand pyright.organizeimports<CR>
