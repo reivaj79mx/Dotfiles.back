@@ -7,6 +7,7 @@ export PIP_BIN="$HOME/.local/bin"
 export PATH="$PIP_BIN:$EXIFTOOL:$GOPATH/bin:$PATH"
 export NVM_DIR="$HOME/.nvm"
 export PYTHONPATH="$HOME/Documentos/devs/python/pyloteria/pyloteria"
+export PATH="$HOME/.poetry/bin:$PATH"
 
 # HISTORY 
 export HISTORY_IGNORE="(ls|exit|clear|cd|cd ..|cd..)"
@@ -55,3 +56,4 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/Dotfiles/ --work-tree=$HOME'
 
 # Loads NVM bash completion
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
