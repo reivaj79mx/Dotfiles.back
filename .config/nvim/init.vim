@@ -41,10 +41,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', { 'branch': 'release' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'vimlab/split-term.vim'
 Plug 'preservim/nerdtree'
 Plug 'bagrat/vim-buffet'
 Plug 'airblade/vim-rooter'
+Plug 'numirias/semshi', { 'do': ':UpdateRemotePlugins' }
 Plug 'sheerun/vim-polyglot'
 
 " => THEMES
@@ -53,6 +53,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'tomasr/molokai'
 Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'junegunn/seoul256.vim'
+Plug 'joshdick/onedark.vim'
 
 call plug#end()
 
@@ -61,18 +62,22 @@ let g:lightline = {
     \ 'colorscheme': 'molokai',
     \ 'enable': {
     \   'tabline': 0
-    \}
-    \}
+    \ }
+    \ }
 
 " => SINTAXIS Y COLOR
-let g:python_highlight_all = 1
+if (has("nvim"))
+    let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
 
-if (has("termguicolors"))
+if exists('+termguicolors')
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
     set termguicolors
 endif
 
-let g:seoul256_background = 233
-colorscheme seoul256 
+syntax on
+colorscheme onedark 
 
 " => LEADER KEY
 let mapleader = " "
@@ -82,9 +87,6 @@ let g:fzf_layout = {'down': '40%'}
 
 map <C-p> :Files<CR>
 map <C-f> :BLines<CR>
-
-" => TERMINAL
-nmap <C-t> :15Term<CR>
 
 " => VIM-BUFFET
 let g:buffet_always_show_tabline = 0
@@ -103,6 +105,7 @@ nmap <leader>f :NERDTreeFind<CR>
 let g:rooter_patterns = ['.git']
 
 " => STARTIFY
+let g:webdevicons_enable_startify = 1
 let g:startify_files_number = 5
 let g:startify_lists = [
     \ { 'type': 'files', 'header': ['   MRU']},

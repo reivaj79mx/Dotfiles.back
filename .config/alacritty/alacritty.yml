@@ -125,7 +125,7 @@ font:
     family: Iosevka Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Medium
+    style: Bold
 
   # Italic font face
   italic:
@@ -147,10 +147,10 @@ font:
     family: Iosevka Nerd Font Mono
 
     # The `style` can be specified to pick a specific face.
-    style: Medium
+    style: Bold
 
   # Point size
-  size: 14
+  size: 12
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -402,9 +402,11 @@ draw_bold_text_with_bright_colors: true
 #   - (Linux/BSD) user login shell
 #   - (Windows) powershell
 shell:
-  program: tmux 
-#  args:
-#    - --login
+  program: /usr/bin/zsh 
+  args:
+    - -l
+    - -c
+    - "tmux"
 
 # Startup directory
 #
@@ -674,7 +676,7 @@ shell:
 #    the mode is *not* active, e.g. `~Alt`.
 #
 # Bindings are always filled by default, but will be replaced when a new
-# binding with the same triggers is defined. To unset a default binding, it can
+# binding with the same triggers is defined. To327177e0-fdc2-4739-8e78-10d2d278ff4f unset a default binding, it can
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
 #
